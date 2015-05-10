@@ -8,6 +8,14 @@ from django.views.generic.list import ListView
 from cms.forms import BookForm, ImpressionForm
 from cms.models import Book, Impression
 
+def home(request):
+    '''書籍の一覧'''
+#    return HttpResponse(u'書籍の一覧')
+    books = Book.objects.all().order_by('id')
+    return render_to_response('cms/home.html',  # 使用するテンプレート
+                              {'books': books},       # テンプレートに渡すデータ
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
 def book_list(request):
     '''書籍の一覧'''
 #    return HttpResponse(u'書籍の一覧')

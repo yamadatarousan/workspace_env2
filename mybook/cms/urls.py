@@ -3,6 +3,8 @@ from django.conf.urls import patterns, url
 from cms import views
 
 urlpatterns = patterns('',
+    # ホーム
+    url(r'^home/$', views.home, name='home'),   # 一覧
     # 書籍
     url(r'^book/$', views.book_list, name='book_list'),   # 一覧
     url(r'^book/add/$', views.book_edit, name='book_add'),  # 登録
