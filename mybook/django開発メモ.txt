@@ -1,0 +1,35 @@
+django開発メモ
+
+## 仮想環境を設置したディレクトリ
+C:\Users\*user_name*\Documents
+
+## 仮想環境作成コマンド
+virtualenv env2
+
+## 仮想環境の中に入って
+cd env2
+
+## 仮想環境の起動
+Scripts\activate
+
+## 仮想環境にdjangoを入れる（初回のみでOK）
+pip install django==1.7.1
+
+## 仮想環境にbootstarpを入れる（初回のみでOK）
+pip install django-bootstrap-form
+
+## 仮想環境を起動している状態(env2表示がある状態）で開発ディレクトリに移動
+cd hoge\hoge
+
+## 仮想環境を起動している状態(env2表示がある状態）で開発ディレクトリに移動
+python manage.py runserver
+
+* setting.pyとかに「-*- coding: utf-8 -*-」のおまじないをつけておかないと構文エラーを吐いたりする
+* ファイル内に日本語書いたら必ずおまじないつけるようにしたほうがいい
+
+## ローカルサーバ
+http://127.0.0.1:8000/
+
+## アカウント
+id:****
+pass:****
