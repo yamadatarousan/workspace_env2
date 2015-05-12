@@ -9,12 +9,35 @@ from cms.forms import BookForm, ImpressionForm
 from cms.models import Book, Impression
 
 def home(request):
-    '''書籍の一覧'''
-#    return HttpResponse(u'書籍の一覧')
-    books = Book.objects.all().order_by('id')
+    '''ユーザーホーム画面'''
     return render_to_response('cms/home.html',  # 使用するテンプレート
-                              {'books': books},       # テンプレートに渡すデータ
                               context_instance=RequestContext(request))  # その他標準のコンテキスト
+
+def mypage(request):
+    '''マイペ'''
+    return render_to_response('cms/mypage.html',  # 使用するテンプレート
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
+def session(request):
+    '''同じやつ使った'''
+    return render_to_response('cms/session.html',  # 使用するテンプレート
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
+def favorite(request):
+    '''お気に入りの感想'''
+    return render_to_response('cms/favorite.html',  # 使用するテンプレート
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
+def match(request):
+    '''相性'''
+    return render_to_response('cms/match.html',  # 使用するテンプレート
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
+def other(request):
+    '''その他'''
+    return render_to_response('cms/other.html',  # 使用するテンプレート
+                              context_instance=RequestContext(request))  # その他標準のコンテキスト
+
 
 def book_list(request):
     '''書籍の一覧'''

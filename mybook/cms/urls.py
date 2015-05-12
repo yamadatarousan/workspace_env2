@@ -4,7 +4,17 @@ from cms import views
 
 urlpatterns = patterns('',
     # ホーム
-    url(r'^home/$', views.home, name='home'),   # 一覧
+    url(r'^home/$', views.home, name='home'),
+    # マイペ
+    url(r'^mypage/$', views.mypage, name='mypage'),
+    # 同じものを利用
+    url(r'^session/$', views.session, name='session'),
+    # お気に入りの感想
+    url(r'^favorite/$', views.favorite, name='favorite'),
+    # 相性
+    url(r'^match/$', views.match, name='match'),
+    # その他
+    url(r'^other/$', views.other, name='other'),
     # 書籍
     url(r'^book/$', views.book_list, name='book_list'),   # 一覧
     url(r'^book/add/$', views.book_edit, name='book_add'),  # 登録
